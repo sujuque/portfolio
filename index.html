@@ -2,16 +2,42 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/src/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&family=Exo+2:wght@400;500&family=Roboto:wght@400;500&family=Poppins:wght@400500&display=swap" rel="stylesheet">
     <title>Portfolio</title>
     <link rel="stylesheet" href="/src/style.css">
   </head>
   <body>
-    <h1>Welcome to My Portfolio!</h1>
+    <div class="everyWrapper">
+      <div class="nav-container">
+        <div class="nav-bar top-nav">
+          <a href="/src/about.html" class="nav-link">Su Durakbasa</a>
+          <a href="/index.html" class="nav-link" style="font-size: 2.5rem;">Portfolio</a>
+          <a href="https://www.instagram.com/drawingsbysu/profilecard/?igsh=eHppYW5vczF5Nzgw" target="_blank" class="nav-link">@drawingsbysu</a>
+        </div>
+        <div class="nav-bar bottom-nav">
+          <a href="/src/animation.html" class="nav-link">Animation</a>
+          <a href="/src/illustration.html" class="nav-link">Illustration</a>
+          <a href="/src/projects.html" class="nav-link">Projects</a>
+        </div>
+      </div>
+
+      <div class="content">
+        <!-- <div class="intro-box">
+          <h1>Welcome to My Portfolio!</h1>
+        </div> -->
+        <div class="animation-box">
+          <video id="animationVideo" class="animation-video" autoplay muted>
+            <source src="./src/animation/landing_anim.mp4" type="video/mp4">
+            Get a better browser.
+          </video>
+        </div>
+      </div>
+    </div>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
-
