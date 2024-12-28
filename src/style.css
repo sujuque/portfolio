@@ -256,7 +256,7 @@ h1, h2, h3 {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 20px;
-  max-height: calc(100vh - 50px);
+  max-height: calc(100vh - 50px); 
 }
 
 .scattered-video-container {
@@ -265,6 +265,7 @@ h1, h2, h3 {
   background: #fff;
   overflow: hidden;
   margin-bottom: 10px;
+  /* width: 100%; */
 }
 
 .scattered-animation-video {
@@ -274,6 +275,7 @@ h1, h2, h3 {
   max-height: calc(80vh - 50px);
   max-width: 100%;
   object-fit: contain;
+  /* width: 100%; */
 }
 
 .video-description-container {
@@ -316,6 +318,41 @@ h1, h2, h3 {
   border: 1px solid #000;
   border-radius: 0px;
   text-align: right;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+  .row{
+    flex-wrap: nowrap;
+    flex-direction: column;
+    margin-bottom: 0px;
+    max-height: 500vh;
+  }
+
+  .scattered-video-container {
+    width: 100%;
+  }
+
+  .scattered-animation-video {
+    width: 100%; 
+    height: auto;
+  }
+
+  .video-description {
+    font-size: 0.6rem;
+  }
+
+  /* Adjust descriptions for mobile */
+  .video-description-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  /* Adjust title size for mobile */
+  .video-description h2 {
+    font-size: 0.6rem; 
+    padding: 4px 3px;
+  }
 }
 
 /* Illustration page */
@@ -457,6 +494,47 @@ h1, h2, h3 {
   max-width: calc(33.33% - 20px);
 }
 
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .illustration-row {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .illustration-item {
+    flex-basis: calc(50% - 8px);
+    width: 100%;
+    height: auto;
+  }
+
+  .illustration-description-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .illustration-description h2 {
+    font-size: 0.6rem;
+    padding: 4px 3px;
+  }
+
+  .illustration-tag h3 {
+    font-size: 0.5rem;
+    padding: 2px 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .illustration-item {
+    flex-basis: 100%;
+  }
+
+  .illustration-description h2,
+  .illustration-tag h3 {
+    font-size: 0.5rem;
+    padding: 3px 6px;
+  }
+}
+
 /* Projects page */
 .project-wrapper {
   display: flex;
@@ -496,6 +574,7 @@ h1, h2, h3 {
   margin-left: 20px;
   flex: 1;
   gap: 10px;
+  text-align: left;
 }
 
 .project-headline h2 {
@@ -522,6 +601,51 @@ h1, h2, h3 {
   border: solid 1px #000;
   font-size: 0.8rem;
   color: #000;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .project-wrapper {
+    flex-direction: column; 
+    align-items: flex-start;
+  }
+
+  .project-image {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .project-content {
+    margin-left: 0;
+    text-align: left;
+    gap: 8px;
+  }
+
+  .project-headline h2 {
+    font-size: 0.9rem;
+    padding: 4px 3px;
+  }
+
+  .project-tags {
+    gap: 8px;
+  }
+
+  .project-tag {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+}
+
+/* Very small screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .project-headline h2 {
+    font-size: 0.7rem;
+  }
+
+  .project-tag {
+    font-size: 0.6rem;
+    padding: 3px 6px;
+  }
 }
 
 /* Deta Surf Page */
@@ -711,7 +835,6 @@ h1, h2, h3 {
   cursor: pointer;
 }
 
-
 /* Illustration Section */
 .illustration-rows {
   display: flex;
@@ -757,7 +880,7 @@ h1, h2, h3 {
   padding: 0.2rem 0.5rem;
 }
 
-.illustration-description {
+.illustration-descriptions {
   font-size: 0.9rem;
   line-height: 1;
   text-align: left;
@@ -830,7 +953,7 @@ h1, h2, h3 {
 
 .website-iframe-container iframe {
   width: 100%;
-  height: 100%; /* Adjust this height to align visually with your illustrations */
+  height: 100%;
   border: none;
 }
 
@@ -858,6 +981,139 @@ h1, h2, h3 {
 
 .website-iframe-container:hover .hover-overlay {
   opacity: 1;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+
+  .first-row-overview .overview-wrapper {
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .overview-wrapper {
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .overview-image {
+    flex: 1;
+    margin-bottom: 2rem; 
+  }
+
+  .overview-headline h1 {
+    font-size: 1rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .overview-description {
+    font-size: 0.8rem; 
+    line-height: 1.1;
+  }
+
+  .overview-tags {
+    gap: 0.1rem;
+  }
+
+  .tag {
+    font-size: 0.7rem;
+  }
+
+  /* Video, iframe, and image layout adjustments */
+  .animation-video-details,
+  .video-details,
+  .deta-iframe-container {
+    flex-direction: column; 
+    width: 100%;
+  }
+
+  .video-headline h2 {
+    font-size: 0.9rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .video-description {
+    font-size: 0.8rem;
+  }
+
+  /* Adjust the moodboard layout */
+  .moodboard-images {
+    width: 100%; 
+    grid-template-columns: 1fr; 
+  }
+
+  .moodboard-images img {
+    width: 100%;
+    height: auto;
+  }
+
+  .illustration-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .illustration-image {
+    flex: 0 0 100%;
+    margin-bottom: 0rem; 
+  }
+
+  .illustration-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 0px;
+  }
+
+  .illustration-details {
+    flex: 1;
+    width: 100%;
+    gap: 0.2rem; /* Increased gap for better spacing */
+  }
+
+  .illustration-headline h3 {
+    font-size: 0.9rem;
+    margin: 0;
+    border: 1px solid #000;
+    color: #ffffff;
+    background-color: #000;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .illustration-descriptions {
+    font-size: 0.7rem;
+    line-height: 1.1;
+    text-align: left;
+  }
+
+  .lightbox img,
+  .lightbox video {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 0px;
+  }
+}
+
+/* Very small screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .overview-headline h1 {
+    font-size: 1rem;
+  }
+
+  .overview-description {
+    font-size: 0.75rem; 
+  }
+
+  .video-headline h2 {
+    font-size: 0.9rem;
+  }
+
+  .video-description {
+    font-size: 0.75rem;
+  }
+
+  .tag {
+    font-size: 0.6rem; 
+    padding: 0.2rem 0.5rem; 
+  }
 }
 
 /* Gibbon Page */
@@ -911,4 +1167,16 @@ h1, h2, h3 {
   transform: translateY(-10px); 
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .illustration-image-add {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    justify-items: center; 
+  }
+
+  .illustration-image-add img {
+    max-width: 100%; 
+  }
 }
