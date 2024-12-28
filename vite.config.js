@@ -7,6 +7,7 @@ export default {
   build: {
     outDir: "../dist", // Output folder for built files
     emptyOutDir: true, // Clean the output directory before building
+    assetsInclude: ['**/*.woff2', '**/*.woff', '**/*.ttf', '**/*.eot'], // Include font files
     rollupOptions: {
       input: {
         index: "./index.html", // index.html is outside the src folder
@@ -20,3 +21,4 @@ export default {
     },
   },
 };
+
