@@ -4,6 +4,7 @@ export default {
   appType: "mpa", 
   plugins: [ViteMinifyPlugin()],
   root: "./src", // This is where your HTML files inside the src folder are located
+  base: '/portfolio/',
   build: {
     outDir: "../dist", // Output folder for built files
     emptyOutDir: true, // Clean the output directory before building
