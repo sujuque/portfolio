@@ -14,5 +14,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const modal = document.getElementById("imageModal");
       modal.style.display = "none";
     };
+
+    // Prevent right-click on images and videos
+    document.addEventListener("contextmenu", (event) => {
+      if (event.target.tagName === "IMG" || event.target.tagName === "VIDEO") {
+          event.preventDefault();
+      }
+    });
+
   });
   

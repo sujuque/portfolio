@@ -33,6 +33,14 @@ h1, h2, h3 {
   font-family: 'Exo 2', sans-serif; 
 }
 
+img {
+  user-select: none;
+}
+
+video {
+  user-select: none;
+}
+
 .hidden {
   display: none;
 }
@@ -88,6 +96,7 @@ h1, h2, h3 {
   width: 70px;
   height: 70px;
   vertical-align: middle;
+  margin-left: 30px;
 }
 
 .content {
@@ -148,7 +157,7 @@ h1, h2, h3 {
 /* General Container for all videos */
 .animation-projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px; 
   padding: 0px;
   background-color: none;
@@ -227,20 +236,44 @@ h1, h2, h3 {
 }
 
 /* Responsive Adjustments */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .animation-projects {
-      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Larger videos on wider screens */
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .animation-titles {
+    align-items: center;
+  }
+
+  .animation-title-box-left h2 {
+    font-size: 0.8rem;
+    padding: 3px 5px;
+  }
+
+  .animation-title-box-right h3 {
+    font-size: 0.6rem;
+    padding: 2px 4px;
+  }
+
+  .animation-description {
+      font-size: 0.7rem;
+      padding: 2px 4px;
   }
 }
 
 @media (max-width: 480px) {
-  .animation-title-box-left h2, 
+  .animation-title-box-left h2 {
+      font-size: 0.8rem;
+      padding: 3px 5px;
+  }
+
   .animation-title-box-right h3 {
-      font-size: 1rem;
+    font-size: 0.6rem;
+    padding: 2px 4px;
   }
 
   .animation-description {
-      font-size: 0.8rem;
+      font-size: 0.7rem;
   }
 }
 
@@ -289,28 +322,29 @@ h1, h2, h3 {
 }
 
 .video-description h2 {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: #fff;
   margin: 0;
   padding: 5px 10px;
   background-color: #000;
   border: 1px solid #000;
   border-radius: 0px;
-  /* text-transform: uppercase; */
 }
 
-.video-description-link {
+.description-link {
   text-decoration: none;
 }
 
-.video-description-link:hover .video-description h2 {
+.description-link:hover .video-description h2,
+.description-link:hover .illustration-description h2,
+.description-link:hover .animation-title-box-left h2{
   background-color: rgb(140, 0, 255);
   color: #fff;
   border:1px solid rgb(140, 0, 255);
 }
 
 .video-tag h3 {
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   color: #000;
   margin: 0;
   padding: 5px 10px;
@@ -321,8 +355,8 @@ h1, h2, h3 {
 }
 
 /* Mobile Adjustments */
-@media (max-width: 600px) {
-  .row{
+@media (max-width: 768px) {
+  .row {
     flex-wrap: nowrap;
     flex-direction: column;
     margin-bottom: 0px;
@@ -345,13 +379,18 @@ h1, h2, h3 {
   /* Adjust descriptions for mobile */
   .video-description-container {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: flex-end;
   }
   
   /* Adjust title size for mobile */
   .video-description h2 {
+    font-size: 0.8rem; 
+    padding: 3px 5px;
+  }
+
+  .video-tag h3 {
     font-size: 0.6rem; 
-    padding: 4px 3px;
+    padding: 2px 4px;
   }
 }
 
@@ -476,6 +515,24 @@ h1, h2, h3 {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+.first-row-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.first-row {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 10px; 
+  justify-content: space-between;
+}
+
+.first-row .illustration-item {
+  flex: 1 1 calc(25% - 10px); 
+  max-width: calc(25% - 10px);
+}
+
 .fifth-row-container {
   display: flex;
   flex-direction: column;
@@ -490,31 +547,42 @@ h1, h2, h3 {
 }
 
 .fifth-row .illustration-item {
-  flex: 1 1 calc(33.33% - 20px); 
-  max-width: calc(33.33% - 20px);
+  flex: 1 1 calc(33.33% - 10px);
+  max-width: calc(33.33% - 10px);
 }
 
 /* Mobile adjustments */
 @media (max-width: 767px) {
-  .illustration-row {
+  .illustration-row{
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 1px;
   }
 
   .illustration-item {
-    flex-basis: calc(50% - 8px);
+    /* flex-basis: calc(50% - 8px); */
     width: 100%;
     height: auto;
   }
 
+  .first-row,
+  .fifth-row {
+    gap: 10px;
+  }
+
+  .first-row .illustration-item,
+  .fifth-row .illustration-item {
+    flex: 1 1 calc(50% - 10px);
+    max-width: calc(50% - 10px); 
+  }
+
   .illustration-description-container {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .illustration-description h2 {
     font-size: 0.6rem;
-    padding: 4px 3px;
+    padding: 2px 3px;
   }
 
   .illustration-tag h3 {
@@ -1133,7 +1201,7 @@ h1, h2, h3 {
 
 .gibbon-preview img {
   width: 100%;
-  height: 100%; /* Adjust this height to align visually with your illustrations */
+  height: 100%;
   border: none;
 }
 
@@ -1178,5 +1246,100 @@ h1, h2, h3 {
 
   .illustration-image-add img {
     max-width: 100%; 
+  }
+}
+
+/* Comic Book Container */
+.comic-container {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  width: 100%;
+  /* max-width: 900px; */
+  height: 100%;
+  /* max-height: 600px; */
+  position: relative; 
+  justify-content: center; 
+  align-items: center;
+  border: 1px solid #000;
+}
+
+/* Each Comic Page */
+.comic-page {
+  display: none;
+  width: 30%;
+  height: auto;
+  position: relative;
+}
+
+.comic-page img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Ensures the image maintains its aspect ratio while fitting within the container */
+}
+
+/* Display the active page */
+.comic-page.active {
+  display: block;
+}
+
+/* Navigation Arrows (Left and Right Triangles) */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Right Triangle */
+.nav-arrow-right {
+  right: 10px; /* Position at the right side */
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 20px solid black;
+}
+
+/* Left Triangle */
+.nav-arrow-left {
+  left: 10px; /* Position at the left side */
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 20px solid black;
+}
+
+@media (max-width: 768px) {
+  .comic-page {
+    display: none;
+    width: 90%;
+    height: auto;
+    position: relative;
+  }
+
+  .nav-arrow {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .nav-arrow-right {
+    right: 3px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid black;
+  }
+
+  .nav-arrow-left {
+    left: 3px; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid black;
   }
 }

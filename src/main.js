@@ -13,6 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     console.error("Video element not found.");
   }
+
+  document.addEventListener("contextmenu", (event) => {
+    if (event.target.closest("video") || event.target.closest("img")) {
+        event.preventDefault();
+    }
+});
+
 });
 
 

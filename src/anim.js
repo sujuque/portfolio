@@ -13,6 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Showreel video element not found.");
     }
 
+    document.addEventListener("contextmenu", (event) => {
+        if (event.target.closest("video") || event.target.closest("img")) {
+            event.preventDefault();
+        }
+    });
+
     // Handle Unhomely video
     const unhomelyVideo = document.getElementById("animationClipUnhomely");
     const unhomelyButton = document.getElementById("playButtonUnhomely");
@@ -57,4 +63,5 @@ document.addEventListener("DOMContentLoaded", () => {
     slotVideo.addEventListener("pause", () => {
         slotButton.classList.remove("hidden");
     });
+
 });
