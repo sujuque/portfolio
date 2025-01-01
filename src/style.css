@@ -35,6 +35,7 @@ h1, h2, h3 {
 
 img {
   user-select: none;
+  -webkit-user-drag: none;
 }
 
 video {
@@ -120,6 +121,7 @@ video {
 
 .animation-box {
   display: flex;
+  display: -webkit-flex;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -279,22 +281,29 @@ video {
 
 .scattered-projects {
   display: flex;
+  display: -webkit-flex;
   flex-direction: column;
+  -webkit-flex-direction: column;
   gap: 20px; 
   padding: 0px;
 }
 
 .row {
   display: flex;
+  display: -webkit-flex;
   justify-content: flex-start;
+  -webkit-justify-content: flex-start;
   align-items: flex-start;
+  -webkit-align-items: flex-start;
   gap: 20px;
   max-height: calc(100vh - 50px); 
 }
 
 .scattered-video-container {
   display: flex;
+  display: -webkit-flex;
   flex-direction: column;
+  -webkit-flex-direction: column;
   background: #fff;
   overflow: hidden;
   margin-bottom: 10px;
@@ -313,6 +322,7 @@ video {
 
 .video-description-container {
   display: flex;
+  display: -webkit-flex;
   justify-content: left;
   align-items: center;
   margin-top: 5px;
@@ -397,21 +407,27 @@ video {
 /* Illustration page */
 .illustration-container {
   display: flex;
+  display: -webkit-flex;
   flex-direction: column;
+  -webkit-flex-direction: column;
   gap: 20px; 
   padding: 0px;
 }
 
 .illustration-row {
   display: flex;
+  display: -webkit-flex;
   justify-content: flex-start; 
+  -webkit-justify-content: flex-start;
   gap: 30px;
   transition: transform 0.5s ease-in-out;
 }
 
 .illustration-item {
   display: flex;
+  display: -webkit-flex;
   flex-direction: column;
+  -webkit-flex-direction: column;
   overflow: hidden;
   margin-bottom: 10px;
   background: #fff;
@@ -431,8 +447,11 @@ video {
 
 .illustration-description-container {
   display: flex;
+  display: -webkit-flex;
   justify-content: left;
+  -webkit-justify-content: left; 
   align-items: center;
+  -webkit-align-items: center;
   margin-top: 5px;
   padding: 0px 0px;
   background: none;
@@ -459,6 +478,10 @@ video {
   border: 1px solid #000;
   border-radius: 0px;
   text-align: left;
+}
+
+.illustration-row > *:not(:last-child) {
+  margin-right: 30px; /* Use this instead of `gap` */
 }
 
 /* Modal Styles */
@@ -922,14 +945,14 @@ video {
   align-items: flex-start;
 }
 
-.illustration-image {
+.illustration-image-project {
   position: relative;
   width: 100%;
   overflow: hidden;
   flex: 2;
 }
 
-.illustration-image img {
+.illustration-image-project img {
   width: 80%;
   /* max-width: 300px; */
   border-radius: 0px;
@@ -1124,12 +1147,12 @@ video {
     align-items: flex-start;
   }
 
-  .illustration-image {
+  .illustration-image-project {
     flex: 0 0 100%;
     margin-bottom: 0rem; 
   }
 
-  .illustration-image img {
+  .illustration-image-project img {
     width: 100%;
     height: auto;
     border-radius: 0px;
