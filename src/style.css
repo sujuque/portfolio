@@ -347,7 +347,8 @@ video {
 
 .description-link:hover .video-description h2,
 .description-link:hover .illustration-description h2,
-.description-link:hover .animation-title-box-left h2{
+.description-link:hover .animation-title-box-left h2,
+.description-link:hover .tag {
   background-color: rgb(140, 0, 255);
   color: #fff;
   border:1px solid rgb(140, 0, 255);
