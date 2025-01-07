@@ -22,6 +22,7 @@ export default {
         caretta: "./src/projects/caretta.html",
         dream: "./src/projects/dream.html",
         ton: "./src/projects/ton.html",
+        graphic: "./src/projects/graphic.html",
       },
     },
   },
